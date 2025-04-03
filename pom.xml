@@ -53,6 +53,7 @@
         <artifactId>leshan-tl-jc-client-coap</artifactId>
         <version>2.0.0-M16</version>
     </dependency>
+    
     <!-- add any slf4j backend, here we use one of the smallest one: slf4j-simple -->
     <dependency>
         <groupId>org.slf4j</groupId>
