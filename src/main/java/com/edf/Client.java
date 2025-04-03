@@ -1,13 +1,10 @@
 package com.edf;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.EnumSet;
 import java.util.List;
 
 import org.eclipse.leshan.client.LeshanClient;
 import org.eclipse.leshan.client.LeshanClientBuilder;
-import org.eclipse.leshan.client.endpoint.LwM2mClientEndpointsProvider;
 import org.eclipse.leshan.client.object.Security;
 import org.eclipse.leshan.client.object.Server;
 import org.eclipse.leshan.client.resource.ObjectsInitializer;
@@ -27,7 +24,7 @@ public class Client
         BindingMode serverBindingMode = BindingMode.fromProtocol(Protocol.fromUri("coap://leshan.eclipseprojects.io:5683"));
         
         builder.setEndpointsProviders(List.of(new JavaCoapClientEndpointsProvider()));
-        
+
         // Add objects
         initializer.setInstancesForObject(LwM2mId.SECURITY, Security.noSec("coap://leshan.eclipseprojects.io:5683", 12345));
         initializer.setInstancesForObject(LwM2mId.SERVER, new Server(12345, (5 * 60),
